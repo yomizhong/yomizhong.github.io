@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>yoyoyomi</title>
+  <title>vscode插件开发入门 | yoyoyomi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="yoyoyomi">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前言本文分享：1.vscode插件开发的基本流程。2.实现一个edm模版插件示例。 环境安装nodejsnpmyeoman  //包含大量脚手架的脚手架仓库1npm install -g yo generator-code //微软官方推出的基于yeoman的脚手架1npm install -g generator-code">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode插件开发入门">
+<meta property="og:url" content="http://yoursite.com/2021/01/31/vscode插件开发入门/index.html">
 <meta property="og:site_name" content="yoyoyomi">
+<meta property="og:description" content="前言本文分享：1.vscode插件开发的基本流程。2.实现一个edm模版插件示例。 环境安装nodejsnpmyeoman  //包含大量脚手架的脚手架仓库1npm install -g yo generator-code //微软官方推出的基于yeoman的脚手架1npm install -g generator-code">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/img/code1.png">
+<meta property="og:image" content="http://yoursite.com/img/code3.png">
+<meta property="og:image" content="http://yoursite.com/img/code4.png">
+<meta property="og:image" content="http://yoursite.com/img/code5.png">
+<meta property="og:image" content="http://yoursite.com/img/code6.png">
+<meta property="og:image" content="http://yoursite.com/img/code2.png">
+<meta property="og:updated_time" content="2021-02-03T16:05:05.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yoyoyomi">
+<meta name="twitter:title" content="vscode插件开发入门">
+<meta name="twitter:description" content="前言本文分享：1.vscode插件开发的基本流程。2.实现一个edm模版插件示例。 环境安装nodejsnpmyeoman  //包含大量脚手架的脚手架仓库1npm install -g yo generator-code //微软官方推出的基于yeoman的脚手架1npm install -g generator-code">
+<meta name="twitter:image" content="http://yoursite.com/img/code1.png">
   
     <link rel="alternative" href="/atom.xml" title="yoyoyomi" type="application/atom+xml">
   
@@ -148,21 +159,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-vscode插件开发入门" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+            <article id="post-vscode插件开发入门" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/31/vscode插件开发入门/">vscode插件开发入门</a>
+    <h1 class="article-title" itemprop="name">
+      vscode插件开发入门
     </h1>
   
 
         <!--显示阅读次数-->
-        <!--  -->
+        <!-- 
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                    阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+           -->
         
         <a href="/2021/01/31/vscode插件开发入门/" class="archive-article-date">
   	<time datetime="2021-01-31T14:02:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-31</time>
@@ -172,9 +189,49 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-          		<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本文分享：<br>1.vscode插件开发的基本流程。<br>2.实现一个edm模版插件示例。</p>
+          
+            <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本文分享：<br>1.vscode插件开发的基本流程。<br>2.实现一个edm模版插件示例。</p>
 <h4 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h4><p>nodejs<br>npm<br>yeoman  //包含大量脚手架的脚手架仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo</span><br></pre></td></tr></table></figure></p>
 <p>generator-code //微软官方推出的基于yeoman的脚手架<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g generator-code</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h4 id="项目搭建与调试"><a href="#项目搭建与调试" class="headerlink" title="项目搭建与调试"></a>项目搭建与调试</h4><p>命令行执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yo code</span><br></pre></td></tr></table></figure></p>
+<p>按照提示选择或输入信息后，脚手架会帮我们初始化出一个项目：</p>
+<p><img src="/img/code1.png" alt=""></p>
+<p>用vscode打开这个文件夹，这个时候已经是一个简单的扩展了！  </p>
+<p>在vscode中按F5（mac下fn+F5）或启动调试，这个时候就启动项目调试啦，会新打开一个新的vscode窗口，接着就可以在这个新窗口中调试效果了。</p>
+<h4 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h4><p>下面进入经典的Hello World环节！  </p>
+<p>在新窗口中按下command + shift + p调出命令面板，输入hello world命令，回车，弹出来提示框如下：</p>
+<p><img src="/img/code3.png" alt=""></p>
+<h4 id="注册命令"><a href="#注册命令" class="headerlink" title="注册命令"></a>注册命令</h4><p>下面我们来看下项目的目录结构，如下图</p>
+<p><img src="/img/code4.png" alt=""></p>
+<p>首先我们来查看一下vsc-extension-quickstart.md这个文件，它对项目运行调试快捷键及重要文件作了介绍。<br>下面来看下这两个比较重要的文件：<br>package.json文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;name&quot;: &quot;template-plugin&quot;,   //插件名称</span><br><span class="line">	&quot;displayName&quot;: &quot;template-plugin&quot;,   //插件显示名称</span><br><span class="line">	&quot;description&quot;: &quot;&quot;,</span><br><span class="line">	&quot;version&quot;: &quot;0.0.1&quot;,</span><br><span class="line">	&quot;engines&quot;: &#123;</span><br><span class="line">		&quot;vscode&quot;: &quot;^1.52.0&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&quot;categories&quot;: [</span><br><span class="line">		&quot;Other&quot;</span><br><span class="line">	],</span><br><span class="line">	&quot;activationEvents&quot;: [   //插件的激活数组：即插件在什么情况下会被激活</span><br><span class="line">		&quot;onCommand:template-plugin.helloWorld&quot;</span><br><span class="line">	],</span><br><span class="line">	&quot;main&quot;: &quot;./extension.js&quot;,   //入口文件</span><br><span class="line">	&quot;contributes&quot;: &#123;</span><br><span class="line">		&quot;commands&quot;: [   //事件所对应的命令列表</span><br><span class="line">			&#123;</span><br><span class="line">				&quot;command&quot;: &quot;template-plugin.helloWorld&quot;,</span><br><span class="line">				&quot;title&quot;: &quot;Hello World&quot;</span><br><span class="line">			&#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>contributes配置项: 是整个插件的贡献点，也就是说这个插件有哪些功能。contributes字段可以设置的key也基本显示了vscode插件可以做什么。  </p>
+<p>configuration：通过这个配置项我们可以设置一个属性，这个属性可以在vscode的settings.json中设置，然后在插件工程中可以读取用户设置的这个值，进行相应的逻辑。  </p>
+<p>commands：命令，通过cmd+shift+p进行输入来实现的。<br>menus：通过这个选项我们可以设置右键的菜单<br>keybindings：可以设置快捷键<br>languages：设置语言特点，包括语言的后缀等<br>grammars：可以在这个配置项里设置描述语言的语法文件的路径，vscode可以根据这个语法文件来自动实现语法高亮功能<br>snippets：设置语法片段相关的路径  </p>
+<p>extension.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import * as vscode from &apos;vscode&apos;;</span><br><span class="line"></span><br><span class="line">export function activate(context: vscode.ExtensionContext) &#123;</span><br><span class="line"></span><br><span class="line">	// 这里的代码将只会在插件激活时执行一次</span><br><span class="line">	console.log(&apos;Congratulations, your extension &quot;template-plugin&quot; is now active!&apos;);</span><br><span class="line">    </span><br><span class="line">    // 定义在 package.json 中的命令在这里定义</span><br><span class="line">    // 提供 registerCommand 来注册实现代码</span><br><span class="line">    // commandId 参数必须与 package.json 匹配</span><br><span class="line">	let disposable = vscode.commands.registerCommand(&apos;template-plugin.helloWorld&apos;, () =&gt; &#123;</span><br><span class="line">    	//这里的代码每次执行 这个命令 的时候都会被执行</span><br><span class="line"></span><br><span class="line">		// 显示信息框</span><br><span class="line">		vscode.window.showInformationMessage(&apos;Hello World from template-plugin!&apos;);</span><br><span class="line">	&#125;);</span><br><span class="line"></span><br><span class="line">	//事件入栈</span><br><span class="line">	context.subscriptions.push(disposable);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 插件被停用的时候被调用</span><br><span class="line">export function deactivate() &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在我们来捋一下整个流程：<br>1.在package.json的配置项中声明命令；<br>2.然后在extension.ts的activate()中去注册该命令，绑定事件；<br>3.所有注册类的API执行后都要将结果放到context.subscriptions中去。<br>这样当插件被激活后，输入命令，命令绑定的事件就会被执行。</p>
+<h4 id="edm插件模版需求分析"><a href="#edm插件模版需求分析" class="headerlink" title="edm插件模版需求分析"></a>edm插件模版需求分析</h4><p>edm开发现状：</p>
+<p>功能实现：<br>1.一键生成一个edm模版文件。<br>2.根据输入提示的字符，自动生成代码片段，减少重复劳动。</p>
+<h5 id="一键生成edm模版文件"><a href="#一键生成edm模版文件" class="headerlink" title="一键生成edm模版文件"></a>一键生成edm模版文件</h5><p>首先需要在package.json里配置右键菜单如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&quot;contributes&quot;: &#123;</span><br><span class="line">		&quot;commands&quot;: [</span><br><span class="line">			&#123;</span><br><span class="line">				&quot;command&quot;: &quot;template-plugin.createEdmFile&quot;,</span><br><span class="line">				&quot;title&quot;: &quot;Create Edm File&quot;</span><br><span class="line">			&#125;</span><br><span class="line">		],</span><br><span class="line">		&quot;menus&quot;: &#123; </span><br><span class="line">			&quot;explorer/context&quot;: [   //菜单类型，这里是资源管理器的菜单</span><br><span class="line">				&#123;</span><br><span class="line">					&quot;command&quot;: &quot;template-plugin.createEdmFile&quot;, //菜单点击时对应的命令</span><br><span class="line">					&quot;group&quot;: &quot;1_modification&quot;  //菜单所在分组</span><br><span class="line">				&#125;</span><br><span class="line">			]</span><br><span class="line">		&#125;,</span><br><span class="line">        ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>看一下效果如下：<br><img src="/img/code5.png" alt=""><br>接下来我们需要获取当前的文件夹的绝对路径，提示用户输入文件名，然后使用node.js的fs模块的API，把设定的模版内容写入文件，代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// 为命令绑定事件</span><br><span class="line">let disposable = vscode.commands.registerCommand(&apos;template-plugin.createEdmFile&apos;, (param) =&gt; &#123;</span><br><span class="line">	// 文件夹绝对路径</span><br><span class="line">	const folderPath = param.fsPath;</span><br><span class="line">		</span><br><span class="line">	const options = &#123;</span><br><span class="line">        prompt: &quot;请输入文件名: &quot;,</span><br><span class="line">        placeHolder: &quot;文件名&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">        </span><br><span class="line">    // 调出系统输入框获取组件名</span><br><span class="line">    vscode.window.showInputBox(options).then(value =&gt; &#123;</span><br><span class="line">        if (!value) &#123;return;&#125;</span><br><span class="line"></span><br><span class="line">        const fileName = value;</span><br><span class="line">		const fullPath = `$&#123;folderPath&#125;/$&#123;fileName&#125;`;</span><br><span class="line">        </span><br><span class="line">        // 生成模版文件</span><br><span class="line">		fs.writeFileSync(fullPath, templateData);</span><br><span class="line">	</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h5 id="用户预设模版内容，一键生成模版"><a href="#用户预设模版内容，一键生成模版" class="headerlink" title="用户预设模版内容，一键生成模版"></a>用户预设模版内容，一键生成模版</h5><p>当插件默认提供的模版满足不了新的需求，或者用户需要使用新的模版怎么办呢？<br>如果是自己使用，当然可以更新自给自足，如果别人使用怎么办呢？  </p>
+<p>解决这个问题的办法可以是给vscode的settings增加有一个设置项，用户填写对应的值，vscode插件就可以读取这个值，进而读取相关的文件。<br>给settings增加设置项可以通过package.json文件的contributes进行配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&quot;configuration&quot;: [</span><br><span class="line">	&#123;</span><br><span class="line">		&quot;title&quot;: &quot;edmTemplate&quot;,</span><br><span class="line">		&quot;properties&quot;: &#123;</span><br><span class="line">			&quot;edmTemplate.customPath&quot;: &#123;</span><br><span class="line">				&quot;type&quot;: &quot;string&quot;,</span><br><span class="line">				&quot;default&quot;: &quot;null&quot;,</span><br><span class="line">				&quot;description&quot;: &quot;type you own edm template customPath&quot;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure></p>
+<p>如图，用户可以预设本地模版文件路径</p>
+<p><img src="/img/code6.png" alt=""><br>接下来，我们需要增加判断，如果用户本地预设了模版，就读取模版内容写入新建的文件，如果用户未预设模版，就写入默认模版如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">// 为命令绑定事件</span><br><span class="line">let disposable = vscode.commands.registerCommand(&apos;template-plugin.createEdmFile&apos;, (param) =&gt; &#123;</span><br><span class="line">	// 文件夹绝对路径</span><br><span class="line">	const folderPath = param.fsPath;</span><br><span class="line">    </span><br><span class="line">    // 读取用户预设模版路径</span><br><span class="line">	const customPath: string =	  vscode.workspace.getConfiguration(&apos;edmTemplate&apos;).get(&apos;customPath&apos;) || &apos;&apos;;</span><br><span class="line">	let customTemplate = &apos;&apos;;</span><br><span class="line">	fs.readFile(customPath, &apos;utf8&apos;, (err, data: string)=&gt; &#123;</span><br><span class="line">		customTemplate = data;</span><br><span class="line">	&#125;);</span><br><span class="line">		</span><br><span class="line">	const options = &#123;</span><br><span class="line">        prompt: &quot;请输入文件名: &quot;,</span><br><span class="line">        placeHolder: &quot;文件名&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">        </span><br><span class="line">    // 调出系统输入框获取组件名</span><br><span class="line">    vscode.window.showInputBox(options).then(value =&gt; &#123;</span><br><span class="line">        if (!value) &#123;return;&#125;</span><br><span class="line"></span><br><span class="line">        const fileName = value;</span><br><span class="line">		const fullPath = `$&#123;folderPath&#125;/$&#123;fileName&#125;`;</span><br><span class="line">        </span><br><span class="line">        // 判断使用用户预设模版还是默认模版</span><br><span class="line">		const templateData: string = customPath ? customTemplate : data;</span><br><span class="line"></span><br><span class="line">		// 生成模版文件</span><br><span class="line">		fs.writeFileSync(fullPath, templateData);</span><br><span class="line">	</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h5 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h5><p>代码片段也叫snippets，就是输入一个前缀，会得到一个或多个提示，然后回车带出很多代码。<br>在edm开发的过程中，会有一些高度相似的代码片段，可以复用，通过插件预设代码片段是个不错的复用方法。<br>在package.json的contributes配置项中配置代码提示文件的文件路径：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;snippets&quot;: [</span><br><span class="line">	&#123;</span><br><span class="line">		&quot;language&quot;: &quot;html&quot;, //snippets作用于何种语言</span><br><span class="line">		&quot;path&quot;: &quot;./snippets/html.json&quot; //服务于snippets的文件的路径</span><br><span class="line">	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>html.json如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;bannerImg&quot;: &#123; //代码片段名称</span><br><span class="line">      &quot;prefix&quot;: [&quot;bI&quot;], //前缀，即输入什么可以出现snippets的提示</span><br><span class="line">      &quot;body&quot;: [</span><br><span class="line">        &quot;&lt;tr&gt;&quot;,</span><br><span class="line">        &quot;\t&lt;td colspan=\&quot;\&quot; align=\&quot;center\&quot; &gt;&quot;,</span><br><span class="line">        &quot;\t\t&lt;img width=\&quot;\&quot; height=\&quot;\&quot; alt=\&quot;\&quot; src=\&quot;$&#123;1:src&#125;\&quot; style=\&quot;display: block;\&quot;&gt;&quot;,</span><br><span class="line">        &quot;\t&lt;/td&gt;&quot;,</span><br><span class="line">        &quot;&lt;/tr&gt;&quot;</span><br><span class="line">      ],</span><br><span class="line">      &quot;description&quot;: &quot;Code snippet for \&quot;bannerImg\&quot;&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>“body”： 按回车后出现的一大段代码，是一个数组，数组里面是字符串，每个字符串代表一行代码，${1：XXX}表示第一个光标的位置，同样${2}表示第二个光标的位置，XXX表示占位符。  </p>
+<p>“description”： 对于这个snippet的描述，当我们选中这个snipets提示时，描述会出现在后面。</p>
+<h4 id="打包、发布、升级"><a href="#打包、发布、升级" class="headerlink" title="打包、发布、升级"></a>打包、发布、升级</h4><h5 id="发布插件到插件市场"><a href="#发布插件到插件市场" class="headerlink" title="发布插件到插件市场"></a>发布插件到插件市场</h5><p>1.安装vsce(Visual Studio Code Extension)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g vsce</span><br></pre></td></tr></table></figure></p>
+<p>2.在网站<a href="https://dev.azure.com/vscode获取一个access" target="_blank" rel="noopener">https://dev.azure.com/vscode获取一个access</a> token，这个token用来创建一个publisher<br>3.创建publisher<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vscr create-publisher (publisher name)</span><br></pre></td></tr></table></figure></p>
+<p>4.登入一个publisher<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vscde login (publisher name)</span><br></pre></td></tr></table></figure></p>
+<p>5.打包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vsce package</span><br></pre></td></tr></table></figure></p>
+<p>6.发布<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vsce publish</span><br></pre></td></tr></table></figure></p>
+<h5 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h5><p>1.首先在package.json文件中修改插件的版本号。<br>2.使用命令vsce publish升级.</p>
+<h4 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h4><p>按调试命令打开新窗口时，提示版本不兼容错误如下:</p>
+<p><img src="/img/code2.png" alt=""><br>需要更新到指定版本或者最新版本</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://code.visualstudio.com/api/references/vscode-api" target="_blank" rel="noopener">vscode API</a><br><a href="https://www.jianshu.com/p/e642856f6044" target="_blank" rel="noopener">vscode开发教程</a><br><a href="https://segmentfault.com/a/1190000011343017" target="_blank" rel="noopener">fs中常用API总结</a></p>
+
           
       
     </div>
@@ -184,16 +241,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/31/vscode插件开发入门/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/31/vscode插件开发入门/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/12/15/确保Web安全的HTTPS/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">确保Web安全的HTTPS</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -208,607 +324,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-确保Web安全的HTTPS" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/15/确保Web安全的HTTPS/">确保Web安全的HTTPS</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        <!--  -->
-        
-        <a href="/2020/12/15/确保Web安全的HTTPS/" class="archive-article-date">
-  	<time datetime="2020-12-15T11:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          		<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>在 HTTP 协议中有可能存在信息窃听或身份伪装等安全问题。使用 HTTPS 通信机制可以有效地防止这些问题。</p>
-<h4 id="HTTP的缺点"><a href="#HTTP的缺点" class="headerlink" title="HTTP的缺点"></a>HTTP的缺点</h4><p>通信使用明文(不加密)，内容可能会被窃听；<br>不验证通信方的身份，因此有可能遭遇伪装；<br>无法证明报文的完整性，所以有可能已遭篡改； </p>
-<p>当然，这些问题不仅在 HTTP 上出现，其他未加密的协议中也会存在这类问题。<br>
-          
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTTPS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/15/确保Web安全的HTTPS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#环境安装"><span class="toc-number">2.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目搭建与调试"><span class="toc-number">3.</span> <span class="toc-text">项目搭建与调试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hello-World"><span class="toc-number">4.</span> <span class="toc-text">Hello World</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册命令"><span class="toc-number">5.</span> <span class="toc-text">注册命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#edm插件模版需求分析"><span class="toc-number">6.</span> <span class="toc-text">edm插件模版需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一键生成edm模版文件"><span class="toc-number">6.1.</span> <span class="toc-text">一键生成edm模版文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#用户预设模版内容，一键生成模版"><span class="toc-number">6.2.</span> <span class="toc-text">用户预设模版内容，一键生成模版</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码片段"><span class="toc-number">6.3.</span> <span class="toc-text">代码片段</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打包、发布、升级"><span class="toc-number">7.</span> <span class="toc-text">打包、发布、升级</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#发布插件到插件市场"><span class="toc-number">7.1.</span> <span class="toc-text">发布插件到插件市场</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#升级"><span class="toc-number">7.2.</span> <span class="toc-text">升级</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#踩坑记录"><span class="toc-number">8.</span> <span class="toc-text">踩坑记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">9.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-HTTP报文首部" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/13/HTTP报文首部/">HTTP报文首部</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        <!--  -->
-        
-        <a href="/2020/12/13/HTTP报文首部/" class="archive-article-date">
-  	<time datetime="2020-12-13T14:02:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          		<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>HTTP协议的请求和响应报文中必定包含HTTP首部。首部内容为客户端和服务器分别处理请求和响应提供所需要的信息。<br><img src="/img/header.png" alt=""></p>
-<h4 id="HTTP报文首部"><a href="#HTTP报文首部" class="headerlink" title="HTTP报文首部"></a>HTTP报文首部</h4><h5 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h5><p>在请求中，HTTP 报文由方法、URI、HTTP 版本、HTTP 首部字段等部分构成。<br>
-          
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/13/HTTP报文首部/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-与http协作的服务器" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/12/与http协作的服务器/">与http协作的Web服务器</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        <!--  -->
-        
-        <a href="/2020/12/12/与http协作的服务器/" class="archive-article-date">
-  	<time datetime="2020-12-12T02:46:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          		<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>一台 Web 服务器可搭建多个独立域名的 Web 网站，也可作为通信路 径上的中转服务器提升传输效率。  </p>
-<h4 id="用单台虚拟主机实现多个域名"><a href="#用单台虚拟主机实现多个域名" class="headerlink" title="用单台虚拟主机实现多个域名"></a>用单台虚拟主机实现多个域名</h4><p>HTTP/1.1 规范允许一台 HTTP 服务器搭建多个 Web 站点。比如，提 供 Web 托管服务(Web Hosting Service)的供应商，可以用一台服务 器为多位客户服务，也可以以每位客户持有的域名运行各自不同的网站。<br>
-          
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/12/与http协作的服务器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTTP状态码" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/07/HTTP状态码/">HTTP状态码</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        <!--  -->
-        
-        <a href="/2020/12/07/HTTP状态码/" class="archive-article-date">
-  	<time datetime="2020-12-07T11:12:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          		<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>HTTP 状态码负责表示客户端 HTTP 请求的返回结果、标记服务器端 的处理是否正常、通知出现的错误等工作。</p>
-<h4 id="状态码告知从服务器端返回的请求结果"><a href="#状态码告知从服务器端返回的请求结果" class="headerlink" title="状态码告知从服务器端返回的请求结果"></a>状态码告知从服务器端返回的请求结果</h4><p>状态码，以 3 位数字和原因短语组成，如 200 OK。<br>以下介绍常用的14种状态码。<br>
-          
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/07/HTTP状态码/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTTP报文内的HTTP信息" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/03/HTTP报文内的HTTP信息/">HTTP报文内的HTTP信息</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        <!--  -->
-        
-        <a href="/2020/12/03/HTTP报文内的HTTP信息/" class="archive-article-date">
-  	<time datetime="2020-12-03T10:45:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          		<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>HTTP 通信过程包括从客户端发往服务器端的请求及从服务器端返回 客户端的响应。本文分享请求和响应是怎么运作的。</p>
-<h4 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h4><p>用于 HTTP 协议交互的信息被称为 HTTP 报文。  </p>
-<p>请求端(客户端)的 HTTP 报文叫做请求报文，响应端(服务器端)的叫做响应报文。 HTTP 报文本身是由多行(用 CR+LF 作换行符)数据构成的字符串文 本。</p>
-<p>HTTP 报文大致可分为报文首部和报文主体两块。两者由最初出现的 空行(CR+LF)来划分。通常，并不一定要有报文主体。<br>
-          
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/03/HTTP报文内的HTTP信息/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTTP协议基础" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/01/HTTP协议基础/">HTTP协议基础</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        <!--  -->
-        
-        <a href="/2020/12/01/HTTP协议基础/" class="archive-article-date">
-  	<time datetime="2020-12-01T10:57:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          		<h4 id="HTTP-协议用于客户端和服务器端之间的通信"><a href="#HTTP-协议用于客户端和服务器端之间的通信" class="headerlink" title="HTTP 协议用于客户端和服务器端之间的通信"></a>HTTP 协议用于客户端和服务器端之间的通信</h4><p>请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一 端称为服务器端。<br>在两台计算机之间使用 HTTP 协议通信时，在一条通信线路上必定有 一端是客户端，另一端则是服务器端。<br>请求必定由客户端发出，而服务器端回复响应。<br>
-          
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/01/HTTP协议基础/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-《图解http协议》之Web及网络基础" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/26/《图解http协议》之Web及网络基础/">Web及网络基础</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        <!--  -->
-        
-        <a href="/2020/11/26/《图解http协议》之Web及网络基础/" class="archive-article-date">
-  	<time datetime="2020-11-26T11:09:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          		<h4 id="当我们在Web浏览器输入URL后，页面是如何展示的？"><a href="#当我们在Web浏览器输入URL后，页面是如何展示的？" class="headerlink" title="当我们在Web浏览器输入URL后，页面是如何展示的？"></a>当我们在Web浏览器输入URL后，页面是如何展示的？</h4><p>当我们在Web浏览器中输入url后，浏览器根据url，获取服务器端的资源，从而显示出页面。<br><img src="/img/web-basic-0.png" alt=""><br>
-          
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/26/《图解http协议》之Web及网络基础/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-cookie" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/28/cookie/">cookie</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        <!--  -->
-        
-        <a href="/2020/10/28/cookie/" class="archive-article-date">
-  	<time datetime="2020-10-28T10:50:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          		<h5 id="什么是cookie？"><a href="#什么是cookie？" class="headerlink" title="什么是cookie？"></a>什么是cookie？</h5><p>cookie 是浏览器访问服务器后，服务器传给浏览器的一段数据。<br>浏览器需要保存这段数据，不得轻易删除。<br>此后每次浏览器访问该服务器，都必须带上这段数据。  </p>
-<h5 id="为什么会有cookie？"><a href="#为什么会有cookie？" class="headerlink" title="为什么会有cookie？"></a>为什么会有cookie？</h5><p>http协议是无状态的，就是说，服务器不知道是不是同一个浏览器发起的请求.</p>
-<p>假设要登录认证的web页面本身无法进行状态的管理（不记录已登录的状态），那么每次跳转新页面不是要再次登录，就是要在每次 请求报文中附加参数来管理登录状态。<br>
-          
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/28/cookie/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-webpack本地打包正常，服务器上打包报错问题" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/09/webpack本地打包正常，服务器上打包报错问题/">webpack本地打包正常，服务器上打包报错问题</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        <!--  -->
-        
-        <a href="/2020/10/09/webpack本地打包正常，服务器上打包报错问题/" class="archive-article-date">
-  	<time datetime="2020-10-09T11:53:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          		<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>本地webpack打包，执行npm run build命令，正常打包。但是当发布到服务器的时候，执行打包命令，报错如下</p>
-<p><img src="/img/webpack1.png" alt=""></p>
-<p>知道有错误，但是没有明确是哪里的报错，查看报错日志，也没什么有用的信息。<br>
-          
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/09/webpack本地打包正常，服务器上打包报错问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -828,8 +369,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
